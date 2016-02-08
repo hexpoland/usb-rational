@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recovery USB Creator</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script>
+
+        var gui=require('nw.gui');
+        win=gui.Window.get();
+        win.height = 400;
+        win.width =800;
+
+
+
+    </script>
+<style>
+    @font-face {
+        font-family: myFont;
+        src: url('font/fira1.ttf');
+    }
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
+}
+/*
+    body{
+        background: url("img/bacground.jpg");
+    }
+*/
+    </style>
+</head>
+
+<body style="-webkit-app-region: drag;overflow: hidden;font-family:myFont">
+ <script src="js/main.js"></script>
+  <h4 style="color:red;"><img src="img/usb3.png">USB Recovery | Rollback Creator</h4>
+   <div class="container" id="steps">
+  <script>load_site("step1.html");</script>
+       <!--
+       <br>
+<div class="row">
+    <div class="col-xs-4"><br><br><br><center><img src="img/Whitefficiency_WortBildmarke_grau.jpg" ></center></div>
+   <div class="col-xs-1"><div style="border-left:1px solid #c9c9c9;height:200px"></div></div>
+  <div class="col-xs-6">
+  <form role="form">
+    <div class="form-group">
+     <h3 style="color:#9a9999;">Step 1:</h3>
+      <label for="unit">Select unit (select one):</label>
+      <select class="form-control" id="unit">
+        <option value="1">SCC line</option>
+        <option value="2">SCC_WE line</option>
+        <option value="3">CM_Plus line</option>
+      </select>
+        <br>
+        <center><img src="img/right.png"></center>
+        </div></form>
+  </div>
+       </div>-->
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

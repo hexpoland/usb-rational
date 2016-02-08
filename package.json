@@ -1,0 +1,24 @@
+{
+    "name": "usb",
+    "description": "USB Recovery / Rollback SCC/SCC_WE/CMP",
+    "main": "index.html",
+    "author": "h3x wolaqu@poczta.onet.pl",
+    "main": "index.html",
+    "window": {
+        "toolbar": false,
+        "frame": true,
+        "width": 800,
+        "height": 400,
+        "position": "mouse",
+        "scroll": false
+    },
+    "webkit": {
+        "plugin": true
+    },
+    "dependencies": {
+        "jsonfile": "^2.2.3"
+    }
+
+
+
+}
