@@ -1,4 +1,5 @@
-var fs=require('fs-extra')
+var fs=require('fs-extra');
+var njds=require('nodejs-disks');
 var selected_unit;
 var selected_size;
 var selected_energy;

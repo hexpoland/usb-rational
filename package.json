@@ -10,7 +10,8 @@
         "width": 800,
         "height": 400,
         "position": "mouse",
-        "scroll": false
+        "scroll": false,
+        "icon":"./img/icon.jpg"
     },
     "webkit": {
         "plugin": true
