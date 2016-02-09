@@ -11,7 +11,8 @@
         "height": 400,
         "position": "mouse",
         "scroll": false,
-        "icon":"./img/icon.jpg"
+        "icon":"./img/icon.jpg",
+        "resizable": false
     },
     "webkit": {
         "plugin": true
