@@ -1,0 +1,13 @@
+; Masterskript für "RollBack" der Kettensoftware
+;  Einstellungen für Ketten werden zurückgesetzt ==> Seriengerät
+;  Erstellt:         28.06.2004
+;  Letzte Pflege:    28.06.2004
+;
+ea 0
+;
+y service.eeprom.lock.highdanger.write 60
+;
+;
+y master.rollback.value.write 1
+;
+;

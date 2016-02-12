@@ -1,8 +1,10 @@
-var fs=require('fs-extra');
-var njds=require('nodejs-disks');
+var fs=require('fs');
 var selected_unit;
 var selected_size;
 var selected_energy;
+var fdialogs=require('node-webkit-fdialogs');
+
+
 //jQuery pole select id unit jezeli zostanie zmienione "change()" to zmienna selected_unit1 zawiera wybrana opcje
 $("#unit").change(function(){
 
@@ -27,8 +29,14 @@ function load_site(site) { //funkcja ladowania stron jQuery
     $("#steps").load(site);
 
 }
+function save_src(){
+    console.log("Save src func:#########")
+   document.getElementById("select_dir").click();
+}
 
 function make_usb(){
+
+
     if(selected_unit==null)selected_unit="SCC line";
     if(selected_size==null)selected_size="61";
     if(selected_energy==null)selected_energy="ELectric";
@@ -39,7 +47,9 @@ function make_usb(){
         case "SCC line":
             switch(selected_size){
                 case "61":
+                    save_file();
                     console.log("Wybrano SCC 61");
+
                     break;
                 case "62":
                     console.log("Wybrano SCC 62");

@@ -1,0 +1,127 @@
+;
+; '=====start repair script SCC_61 gas=====
+;
+; Hoehe setzen
+; 109.2 0...499m
+;
+;
+y setup.gasindex.value.write Nat.H(G20)
+y gasbox.steam.speedmax.default.write 3960
+y gasbox.steam.speedmin.default.write 3360
+y gasbox.steam.speedstart.default.write 3540
+y gasbox[0].hotair.speedmax.default.write 4560
+y gasbox[0].hotair.speedmin.default.write 3960
+y gasbox[0].hotair.speedstart.default.write 4260
+y gasbox[1].hotair.speedmax.default.write 0
+y gasbox[1].hotair.speedmin.default.write 0
+y gasbox[1].hotair.speedstart.default.write 0
+;
+y gasbox.steam.co2max.default.write 9.4
+y gasbox.steam.co2min.default.write 8
+y gasbox.steam.screw.default.write 4.2
+y gasbox[0].hotair.co2max.default.write 9.4
+y gasbox[0].hotair.co2min.default.write 8.3
+y gasbox[0].hotair.screw.default.write 3.6
+y gasbox[1].hotair.co2max.default.write 0
+y gasbox[1].hotair.co2min.default.write 0
+y gasbox[1].hotair.screw.default.write 0
+;
+;
+y setup.gasindex.value.write Nat.L(G25)
+y gasbox.steam.speedmax.default.write 3960
+y gasbox.steam.speedmin.default.write 3300
+y gasbox.steam.speedstart.default.write 3480
+y gasbox[0].hotair.speedmax.default.write 4680
+y gasbox[0].hotair.speedmin.default.write 3960
+y gasbox[0].hotair.speedstart.default.write 4260
+y gasbox[1].hotair.speedmax.default.write 0
+y gasbox[1].hotair.speedmin.default.write 0
+y gasbox[1].hotair.speedstart.default.write 0
+;
+y gasbox.steam.co2max.default.write 9.4
+y gasbox.steam.co2min.default.write 8.6
+y gasbox.steam.screw.default.write 4.6
+y gasbox[0].hotair.co2max.default.write 9.4
+y gasbox[0].hotair.co2min.default.write 8.1
+y gasbox[0].hotair.screw.default.write 4.5
+y gasbox[1].hotair.co2max.default.write 0
+y gasbox[1].hotair.co2min.default.write 0
+y gasbox[1].hotair.screw.default.write 0
+;
+;
+y setup.gasindex.value.write 3B/P(G30)
+y gasbox.steam.speedmax.default.write 3660
+y gasbox.steam.speedmin.default.write 3180
+y gasbox.steam.speedstart.default.write 3360
+y gasbox[0].hotair.speedmax.default.write 4320
+y gasbox[0].hotair.speedmin.default.write 3960
+y gasbox[0].hotair.speedstart.default.write 4140
+y gasbox[1].hotair.speedmax.default.write 0
+y gasbox[1].hotair.speedmin.default.write 0
+y gasbox[1].hotair.speedstart.default.write 0
+;
+y gasbox.steam.co2max.default.write 10.4
+y gasbox.steam.co2min.default.write 9.4
+y gasbox.steam.screw.default.write 2.5
+y gasbox[0].hotair.co2max.default.write 10.4
+y gasbox[0].hotair.co2min.default.write 9
+y gasbox[0].hotair.screw.default.write 2.3
+y gasbox[1].hotair.co2max.default.write 0
+y gasbox[1].hotair.co2min.default.write 0
+y gasbox[1].hotair.screw.default.write 0
+;
+;
+y setup.gasindex.value.write 3P(G31)
+y gasbox.steam.speedmax.default.write 3780
+y gasbox.steam.speedmin.default.write 3240
+y gasbox.steam.speedstart.default.write 3420
+y gasbox[0].hotair.speedmax.default.write 4500
+y gasbox[0].hotair.speedmin.default.write 3780
+y gasbox[0].hotair.speedstart.default.write 4020
+y gasbox[1].hotair.speedmax.default.write 0
+y gasbox[1].hotair.speedmin.default.write 0
+y gasbox[1].hotair.speedstart.default.write 0
+;
+y gasbox.steam.co2max.default.write 11.1
+y gasbox.steam.co2min.default.write 9.4
+y gasbox.steam.screw.default.write 2.9
+y gasbox[0].hotair.co2max.default.write 11.1
+y gasbox[0].hotair.co2min.default.write 9.8
+y gasbox[0].hotair.screw.default.write 2.5
+y gasbox[1].hotair.co2max.default.write 0
+y gasbox[1].hotair.co2min.default.write 0
+y gasbox[1].hotair.screw.default.write 0
+;
+;
+y setup.gasindex.value.write 13A/12A
+y gasbox.steam.speedmax.default.write 3900
+y gasbox.steam.speedmin.default.write 3240
+y gasbox.steam.speedstart.default.write 3540
+y gasbox[0].hotair.speedmax.default.write 4740
+y gasbox[0].hotair.speedmin.default.write 3900
+y gasbox[0].hotair.speedstart.default.write 4260
+y gasbox[1].hotair.speedmax.default.write 0
+y gasbox[1].hotair.speedmin.default.write 0
+y gasbox[1].hotair.speedstart.default.write 0
+;
+y gasbox.steam.co2max.default.write 9.5
+y gasbox.steam.co2min.default.write 8.6
+y gasbox.steam.screw.default.write 4.2
+y gasbox[0].hotair.co2max.default.write 9.5
+y gasbox[0].hotair.co2min.default.write 8.4
+y gasbox[0].hotair.screw.default.write 3.5
+y gasbox[1].hotair.co2max.default.write 0
+y gasbox[1].hotair.co2min.default.write 0
+y gasbox[1].hotair.screw.default.write 0
+;
+;
+y service.eeprom.lock.highdanger.write 0
+wait 30000
+;
+; !!! ES MUSS DRIN SEIN WENN KEIN  XML-IMPORT STATTFINDET (LD) !!!
+; !!! ES DARF NICHT DRIN SEIN WENN XML-IMPORT STATTFINDET (LD) !!!
+y update.system.execute "echo @ > /script/riscript.end"
+;
+;
+; '=====script end=====
+;

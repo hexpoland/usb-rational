@@ -1,0 +1,29 @@
+; Masterskript
+;  Einstellungen Model Energy SerNr(dummy) werden durchgeführt
+;  Erstellt:         08.09.2004
+;  Letzte Pflege:    08.09.2004
+;
+;
+; Bricht das Skript bei Fehlermeldungen ab
+ea 0
+;
+y service.eeprom.lock.highdanger.write 60
+;
+;
+; y master.rollback.value.write 1
+;
+;
+y setup.model.value.write SCC_201
+;
+;
+y setup.energy.value.write G
+;
+;
+y setup.unit.sernum.value.write ----------------
+;
+;
+y boiler.volume.reference.value.write 8000
+;
+;
+; An den Stempel in "script.sid" denken, eindeutiger Stempel !!!
+;

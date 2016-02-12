@@ -6772,3 +6772,8 @@ button.close {
 
 
 }
+
+#select_dir {
+    visibility: hidden;
+
+}

@@ -1,0 +1,7 @@
+;
+y service.eeprom.lock.highdanger.write 0
+wait 4000
+;
+; !!! ES MUSS DRIN SEIN WENN KEIN  XML-IMPORT STATTFINDET (LD) !!!
+; !!! ES DARF NICHT DRIN SEIN WENN XML-IMPORT STATTFINDET (LD) !!!
+y update.system.execute "echo @ > /script/riscript.end"
