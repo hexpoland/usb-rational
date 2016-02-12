@@ -1,4 +1,4 @@
-var fs=require('fs');
+var fs=require('fs-extra');
 var selected_unit;
 var selected_size;
 var selected_energy;
@@ -29,10 +29,35 @@ function load_site(site) { //funkcja ladowania stron jQuery
     $("#steps").load(site);
 
 }
+
+//signal to hidden selected_dir from apply button :)
 function save_src(){
     console.log("Save src func:#########")
    document.getElementById("select_dir").click();
+
 }
+var tmppath;
+
+//get select directory
+$('#select_dir').change(function(event){
+    tmppath=$(this).val();
+    console.log("--------------TMPPATH-------------");
+    console.log(tmppath);
+    make_usb();
+})
+//get select directory
+
+//make recovery|rollback usb
+function make_rational(src,dst){
+    fs.copy(src,dst,function(err){
+        if(err) return console.error(err);
+
+        console.log("success!")
+    });
+
+
+}
+//make recovery|rollback function
 
 function make_usb(){
 
@@ -47,8 +72,9 @@ function make_usb(){
         case "SCC line":
             switch(selected_size){
                 case "61":
-                    save_file();
+
                     console.log("Wybrano SCC 61");
+                    make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_61_E/',tmppath+'/');
 
                     break;
                 case "62":
