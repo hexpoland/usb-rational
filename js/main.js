@@ -1,8 +1,8 @@
-var fs=require('fs-extra');
+var fs=require('fs-extra'); //magiczny lib do kopiowania
 var selected_unit;
 var selected_size;
 var selected_energy;
-var fdialogs=require('node-webkit-fdialogs');
+var fdialogs=require('node-webkit-fdialogs'); //fdialos narazie nie uzywany
 
 
 //jQuery pole select id unit jezeli zostanie zmienione "change()" to zmienna selected_unit1 zawiera wybrana opcje
@@ -49,7 +49,8 @@ $('#select_dir').change(function(event){
 
 //make recovery|rollback usb
 function make_rational(src,dst){
-    fs.copy(src,dst,function(err){
+
+fs.copy(src,dst,function(err){
         if(err) return console.error(err);
 
         console.log("success!")
@@ -64,7 +65,7 @@ function make_usb(){
 
     if(selected_unit==null)selected_unit="SCC line";
     if(selected_size==null)selected_size="61";
-    if(selected_energy==null)selected_energy="ELectric";
+    if(selected_energy==null)selected_energy="Electric";
     console.log("Generuje USB stick: "+selected_unit+"|"+selected_size+"|"+selected_energy);
 
     /*tutaj zagniezdzone switche do kopiowania odpowiednieog pliku na usb*/
@@ -72,29 +73,81 @@ function make_usb(){
         case "SCC line":
             switch(selected_size){
                 case "61":
-
-                    console.log("Wybrano SCC 61");
-                    make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_61_E/',tmppath+'/');
-
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 61 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_61_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 61 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_61_G/',tmppath+'/');
+                            break;
+                    }
                     break;
                 case "62":
-                    console.log("Wybrano SCC 62");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 62 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_62_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 62 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_62_G/',tmppath+'/');
+                            break;
+                    }
                     break;
                 case "101":
-                    console.log("Wybrano SCC 101");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 101 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_101_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 101 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_101_G/',tmppath+'/');
+                            break;
+                    }
                     break;
                 case "102":
-                    console.log("Wybrano SCC 102");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 102 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_102_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 102 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_102_G/',tmppath+'/');
+                            break;
+                    }
                     break;
                 case "201":
-                    console.log("Wybrano SCC 201");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 201 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_201_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 201 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_201_G/',tmppath+'/');
+                            break;
+                    }
                     break;
                 case "202":
-                    console.log("Wybrano SCC 202");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano SCC 202 Electric");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_202_E/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano SCC 62 Gas");
+                            make_rational('/Users/macos/Desktop/Node/usb/scc_line_recovery/Repair_Software_SCC_202_G/',tmppath+'/');
+                            break;
+                    }
                     break;
 
             };
             break;
+//    scc line
 
         case "SCC_WE line":
 

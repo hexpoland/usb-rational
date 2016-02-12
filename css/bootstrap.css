@@ -6766,7 +6766,7 @@ button.close {
 #header {
     border: 0px;
     border-width: 400;
-    background-color: rgba(255, 0, 0, 0.6);
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.6) , white);
     color: white;
 
 
