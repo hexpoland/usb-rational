@@ -6764,10 +6764,12 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 #header {
+
     border: 0px;
-    border-width: 400;
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.6) , white);
+    border-width: 50px;
+    background: linear-gradient(to right, rgba(95, 95, 95, 0.98) , rgba(255, 255, 255, 0.56));
     color: white;
+
 
 
 
@@ -6776,4 +6778,16 @@ button.close {
 #select_dir {
     visibility: hidden;
 
+}
+
+#myModal {
+    margin-top: 10%;
+}
+
+#help {
+    padding-left: 10px;
+}
+
+#div_left {
+    padding-left: -10px;
 }

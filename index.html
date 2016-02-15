@@ -5,14 +5,16 @@
     <title>Recovery USB Creator</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
+
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
 
     <script>
 
         var gui=require('nw.gui');
         win=gui.Window.get();
         win.height = 400;
-        win.width =800;
+        win.width =700;
 
 
 
@@ -35,7 +37,7 @@
   min-height: 70px;
 }
 
-    body{
+body{
         background: url("img/white_wallpaper.jpg");
     }
 
@@ -49,8 +51,7 @@
 </div>
    <div class="container" id="steps">
   <script>load_site("step1.html")</script>
-       <!--
-       <br>
+       <!--<br>
 <div class="row">
     <div class="col-xs-4"><br><br><br><center><img src="img/Whitefficiency_WortBildmarke_grau.jpg" ></center></div>
    <div class="col-xs-1"><div style="border-left:1px solid #c9c9c9;height:200px"></div></div>
@@ -73,6 +74,26 @@
 </div>
 
 
+<!--Sukces Modal-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title">USB Recovery | Rollback Generator</h5>
+      </div>
+      <div class="modal-body">
+         Success ! Generate USB recovery.
+      </div>
+      <div class="modal-footer">
+          <center><button type="button" class="btn btn-info" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button></center>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 

@@ -7,11 +7,10 @@
     "window": {
         "toolbar": false,
         "frame": true,
-        "width": 800,
+        "width": 700,
         "height": 400,
         "position": "mouse",
         "scroll": false,
-        "icon":"./img/icon.jpg",
         "resizable": false
     },
     "webkit": {
