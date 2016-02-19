@@ -10,11 +10,22 @@
     <script src="js/bootstrap.js"></script>
 
     <script>
+        document.body.addEventListener('dragover', function(e){
+  e.preventDefault();
+  e.stopPropagation();
+}, false);
+document.body.addEventListener('drop', function(e){
+  e.preventDefault();
+  e.stopPropagation();
+}, false);
 
         var gui=require('nw.gui');
         win=gui.Window.get();
         win.height = 400;
         win.width =700;
+
+
+
 
 
 
@@ -38,7 +49,8 @@
 }
 
 body{
-        background: url("img/white_wallpaper.jpg");
+        background: url("img/white_wallpaper.jpg") 50% -15%;
+        opacity: 0.8
     }
 
     </style>
@@ -47,7 +59,7 @@ body{
 <body style="-webkit-app-region: drag;overflow: hidden;font-family:myFont">
  <script src="js/main.js"></script>
  <div id="header">
-     <h4><img src="img/usb3.png"><b>USB Recovery </b>|<i> Rollback Creator</i></h4>
+     <h4><img src="img/header.png"><b style="color:red">USB Recovery</b> |<i> Rollback Creator</i></h4>
 </div>
    <div class="container" id="steps">
   <script>load_site("step1.html")</script>
@@ -82,7 +94,7 @@ body{
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">USB Recovery | Rollback Generator</h5>
+        <h5 class="modal-title"><img src="img/header-min.png" style="size:50%">USB Recovery | Rollback Generator</h5>
       </div>
       <div class="modal-body">
          Success ! Generate USB recovery.

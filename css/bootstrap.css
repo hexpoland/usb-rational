@@ -6767,8 +6767,8 @@ button.close {
 
     border: 0px;
     border-width: 50px;
-    background: linear-gradient(to right, rgba(95, 95, 95, 0.98) , rgba(255, 255, 255, 0.56));
-    color: white;
+    background: linear-gradient(to right, rgb(62, 61, 61) , rgb(255, 255, 255));
+    color: #ffffff;
 
 
 
