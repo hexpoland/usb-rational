@@ -5,6 +5,7 @@ var selected_unit;
 var selected_size;
 var selected_energy;
 var selected_action;
+var serialnumber;
 var fdialogs=require('node-webkit-fdialogs'); //fdialos narazie nie uzywany
 
 
@@ -13,6 +14,9 @@ $("#unit").change(function(){
 
    selected_unit=$('option:selected', $(this)).text();
         console.log(selected_unit);
+        if(selected_unit=="SCC line"||selected_unit=="CM_Plus line"||selected_unit==null){
+            $("#myModalSerial").modal();
+        }
 });
 $("#size").change(function(){
 
@@ -30,6 +34,18 @@ $("#actionrr").change(function(){
             selected_action=$('option:selected', $(this)).text();
                     console.log(selected_action);
                     });
+
+$('#serialnumber').keyup(function () {
+        serialnumber=$("#serialnumber").val();
+        $('#footer').text(serialnumber);
+        console.log(serialnumber);
+            });
+
+$('#serialok').click(function(){
+        load_site("step2.html");
+});
+
+
 
 function load_site(site) { //funkcja ladowania stron jQuery
 
@@ -70,7 +86,9 @@ fs.copy(src,dst,function(err){
 
         console.log("success!");
         $("#myModal").modal();
-        load_site("step1.html")
+        load_site("step1.html");
+        serialnumber=null;
+        $('#footer').text("Serial number...");
 
     });
 
@@ -187,22 +205,86 @@ function make_usb(){
         case "CM_Plus line":
                 switch(selected_size){
                 case "61":
-                    console.log("Wybrano CM_Plus 61");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 61 Electric");
+                            make_rational('cmp_recovery/61e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 61 Gas");
+                            make_rational('cmp_recovery/61g/',tmppath+'/');
+                            break;
+
+                    }
+
                     break;
                 case "62":
-                    console.log("Wybrano CM_Plus 62");
+                   switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 62 Electric");
+                            make_rational('cmp_recovery/62e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 62 Gas");
+                            make_rational('cmp_recovery/62g/',tmppath+'/');
+                            break;
+
+                    }
+
                     break;
                 case "101":
-                    console.log("Wybrano CM_Plus 101");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 101 Electric");
+                            make_rational('cmp_recovery/101e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 101 Gas");
+                            make_rational('cmp_recovery/101g/',tmppath+'/');
+                            break;
+
+                    }
                     break;
                 case "102":
-                    console.log("Wybrano CM_Plus 102");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 102 Electric");
+                            make_rational('cmp_recovery/102e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 102 Gas");
+                            make_rational('cmp_recovery/102g/',tmppath+'/');
+                            break;
+
+                    }
+
                     break;
                 case "201":
-                    console.log("Wybrano CM_Plus 201");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 201 Electric");
+                            make_rational('cmp_recovery/201e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 201 Gas");
+                            make_rational('cmp_recovery/201g/',tmppath+'/');
+                            break;
+
+                    }
+
                     break;
                 case "202":
-                    console.log("Wybrano CM_Plus 202");
+                    switch(selected_energy){
+                        case "Electric":
+                            console.log("Wybrano CM_P 202 Electric");
+                            make_rational('cmp_recovery/202e/',tmppath+'/');
+                            break;
+                        case "Gas":
+                            console.log("Wybrano CMP 202 Gas");
+                            make_rational('cmp_recovery/202g/',tmppath+'/');
+                            break;
+
+                    }
                     break;
 
             };
