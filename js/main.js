@@ -7,6 +7,8 @@ var selected_energy;
 var selected_action;
 var serialnumber;
 var fdialogs=require('node-webkit-fdialogs'); //fdialos narazie nie uzywany
+var replace1=require('replace-in-file');
+var sleep=require('sleep');
 
 
 //jQuery pole select id unit jezeli zostanie zmienione "change()" to zmienna selected_unit1 zawiera wybrana opcje
@@ -85,16 +87,61 @@ fs.copy(src,dst,function(err){
         if(err) return console.error(err);
 
         console.log("success!");
+//    Here inser serial into file!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      <------------------here
+    if(selected_unit=="CM_Plus line"&&serialnumber!=null){
+        console.log("Wpisuje numner do pliku: "+serialnumber);
+    inputSerialCmp(dst+'/RAG_RescueFileCm.txt','/E\d\dMHx{11}/g',serialnumber);
+    }
+    if(selected_unit=="SCC line"){
+        console.log("WPISUJE SCC_LINE NUMBER:"+serialnumber);
+        inputSerialScc(dst+'script/riscript.header','scc',serialnumber);
+    }
         $("#myModal").modal();
         load_site("step1.html");
         serialnumber=null;
         $('#footer').text("Serial number...");
 
+
     });
-
-
+    return true;
 }
 //make recovery|rollback function
+
+//enter serial number
+function inputSerialCmp(recovery_file,text_to_replace,serial){
+    replace1({
+                                files: recovery_file,
+                                replace: /E\d\dMHx{11}/g,
+                                with:serial
+                            },function(error,changedFiles){
+                                if(error){
+                                    return console.log.error('Error occurred:',error);
+                                }
+
+                            console.log('Modified files:',changedFiles.join(', '));
+
+                            });
+        return true;
+}
+function inputSerialScc(recovery_file,text_to_replace,serial){
+    replace1({
+                                files: recovery_file,
+                                replace: /-{16}/g,
+                                with:serial
+                            },function(error,changedFiles){
+                                if(error){
+                                    return console.log.error('Error occurred:',error);
+                                }
+
+                            console.log('Modified files:',changedFiles.join(', '));
+
+                            });
+        return true;
+}
+//    enter serial number
+
+
+
 
 function make_usb(){
 
@@ -210,6 +257,7 @@ function make_usb(){
                             console.log("Wybrano CM_P 61 Electric");
                             make_rational('cmp_recovery/61e/',tmppath+'/');
                             break;
+
                         case "Gas":
                             console.log("Wybrano CMP 61 Gas");
                             make_rational('cmp_recovery/61g/',tmppath+'/');
